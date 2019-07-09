@@ -1,0 +1,143 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 11rem;
+  height: 4rem;
+  border: none;
+  border-radius: 1px;
+  outline: 1px solid transparent;
+  background-color: col(secondary);
+  color: col(primary);
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s;
+  &:active {
+    transform: translateY(10%);
+  }
+  &:focus {
+    outline-color: col(outline);
+  }
+}
+
+.hamburger {
+  position: absolute;
+  z-index: 1;
+  top: 3.4rem;
+  right: 3rem;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: .2s;
+  &--auto {
+    @include small {
+      & > div {
+        background-color: col(secondary);
+        &::before,
+        &::after {
+          background-color: col(secondary);
+        }
+      }
+    }
+  }
+  &--auto-medium {
+    @include medium {
+      & > div {
+        background-color: col(secondary);
+        &::before,
+        &::after {
+          background-color: col(secondary);
+        }
+      }
+    }
+  }
+  &--color {
+    & > div {
+      background-color: col(secondary);
+      &::before,
+      &::after {
+        background-color: col(secondary);
+      }
+    }
+  }
+  &--active {
+    & > div {
+      background-color: transparent;
+      transition: .4s;
+      &::before,
+      &::after {
+        animation: none;
+      }
+      &::before {
+        transform: translateY(6px) rotate(45deg);
+      }
+      &::after {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    }
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+  &__inner {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background-color: col(primary);
+    transform: translateY(8px);
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: col(primary);
+      transition: .2s;
+    }
+    &::before {
+      top: -6px;
+      animation: hamburger-open-up .6s 1;
+    }
+    &::after {
+      top: 6px;
+      animation: hamburger-open-down .6s 1;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  @include medium {
+    padding-left: 3rem;
+    padding-top: 2.8rem;
+  }
+  &__logo {
+    font-size: 2.6rem;
+  }
+  &__link {
+    color: col(cblack);
+    text-decoration: none;
+  }
+  &__menu-icon {
+    position: static;
+    cursor: pointer;
+    @include small {
+      position: absolute;
+    }
+  }
+}

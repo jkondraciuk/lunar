@@ -1,0 +1,165 @@
+@import "config.scss";
+@import "utilities.scss";
+@import "animations.scss";
+
+body {
+  background-color: col(primary);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  @include medium {
+    padding-top: 2.8rem;
+  }
+  &__logo {
+    font-size: 2.6rem;
+  }
+  &__link {
+    color: col(cwhite);
+    text-decoration: none;
+  }
+  &__menu-icon {
+    animation: rotate-in .4s 1;
+  }
+}
+
+.questions {
+  width: 90%;
+  max-width: 34rem;
+  padding: 3rem;
+  @include x-small {
+    max-width: 40rem;
+  }
+  @include small {
+    max-width: 60rem;
+    padding-left: 10vw;
+  }
+  @include medium {
+    max-width: 80rem;
+  }
+  @include large {
+    max-width: 100rem;
+  }
+  &__questions {
+    overflow: hidden;
+  }
+  &__list {
+    list-style-type: none;
+    height: 2.9rem;
+    white-space: nowrap;
+    transition: .6s;
+    @include x-small {
+      height: 38px;
+    }
+    @include small {
+      height: 46px;
+    }
+    @include medium {
+      height: 50px;
+    }
+    @include large {
+      height: 60px;
+    }
+  }
+  &__question {
+    color: col(secondary);
+    font-size: 2.4rem;
+    @include x-small {
+      font-size: 2.8rem;
+    }
+    @include small {
+      font-size: 3.8rem;
+    }
+    @include medium {
+      font-size: 4.2rem;
+    }
+    @include large {
+      font-size: 5rem;
+    }
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    padding: .5rem;
+    border: none;
+    border-bottom: 2px solid lighten(col(primary), 20%);
+    outline: none;
+    background-color: transparent;
+    color: darken(col(secondary), 60%);
+    font-size: 2rem;
+    font-weight: 700;
+    @include small {
+      font-size: 2.5rem;
+    }
+    @include medium {
+      font-size: 2.8rem;
+    }
+    @include large {
+      margin-top: 3rem;
+      font-size: 3.2rem;
+    }
+  }
+  &__error {
+    padding: 1rem .5rem;
+    color: col(error);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: .2s;
+    @include small {
+      font-size: 1.3rem;
+    }
+    &--active {
+      opacity: 1;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__button {
+    width: 7rem;
+    height: 2.5rem;
+    border: none;
+    background-color: col(secondary);
+    font-weight: 700;
+    @include medium {
+      width: 8rem;
+      height: 3rem;
+      font-size: 1.4rem;
+    }
+    @include large {
+      width: 9rem;
+      height: 3.5rem;
+      text-transform: uppercase;
+    }
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+  &__progress-box {
+    position: absolute;
+    top: 40%;
+    right: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 16rem;
+  }
+  &__progress-point {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    outline-color: col(outline);
+    background-color: lighten(col(primary), 20%);
+    cursor: pointer;
+    &--active {
+      background-color: lighten(col(primary), 80%);
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Fly everywhere! Fill in the form and fly as soon as you want!">
+  <meta name="keywords" content="flight, fly, space, mars, moon, earth, rocket, cheap">
+  <title>Buy - Lunar</title>
+  <link rel="stylesheet" href="css/buy.css">
+  <script defer src="js/buy.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1 style="display: none;">Buy a flight. Book a flight</h1>
+    <div class="header__logo">
+      <a class="header__link" href="index.html">Lunar.</a>
+    </div>
+    <div class="header__menu">
+      <a href="flights.html">
+        <div class="hamburger hamburger--color hamburger--active header__menu-icon" id="menuOpen">
+          <div class="hamburger__inner"></div>
+        </div>
+      </a>
+    </div>
+  </header>
+  <main>
+    <section class="questions">
+      <h2 style="display: none;">Buy a flight</h2>
+      <div class="questions__questions">
+        <ul class="questions__list" id="question">
+          <li class="questions__question">What's your first name?</li>
+          <li class="questions__question">What's your last name?</li>
+          <li class="questions__question">Have an e-mail address?</li>
+          <li class="questions__question">Have a phone number?</li>
+          <li class="questions__question">What's your Country?</li>
+        </ul>
+     </div>
+      <form class="questions__form" action="#">
+        <input class="questions__input" id="input" type="text" placeholder="John" autofocus>
+        <div class="questions__error" id="errorMsg">Invalid name. (From 2 to 30 chars, Letters only).</div>
+        <div class="questions__buttons">
+          <input class="button questions__button questions__button--prev questions__button--hidden" id="buttonPrev" type="button" value="Prev">
+          <input class="button questions__button questions__button--next" id="buttonNext" type="button" value="Next">
+        </div>
+      </form>
+      <div class="questions__progress-box">
+        <div class="questions__progress-point questions__progress-point--active" data-question="0" tabindex="0"></div>
+        <div class="questions__progress-point" data-question="1" tabindex="0"></div>
+        <div class="questions__progress-point" data-question="2" tabindex="0"></div>
+        <div class="questions__progress-point" data-question="3" tabindex="0"></div>
+        <div class="questions__progress-point" data-question="4" tabindex="0"></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,160 @@
+@import "config.scss";
+@import "utilities.scss";
+@import "menu.scss";
+@import "animations.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: scroll;
+  background-color: col(primary);
+  color: col(secondary);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  @include medium {
+    padding-left: 3rem;
+    padding-top: 2.8rem;
+  }
+  &__logo {
+    font-size: 2.6rem;
+  }
+  &__link {
+    color: col(cwhite);
+    text-decoration: none;
+  }
+}
+
+.searching {
+  &__input {
+    display: block;
+    width: 70%;
+    max-width: 440px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: none;
+    border-bottom: 2px solid darken(col(secondary), 70%);
+    outline: none;
+    background-color: transparent;
+    color: col(secondary);
+    font-size: 2.8rem;
+    transition: .4s;
+    @include small {
+      width: 60%;
+      max-width: none;
+    }
+    @include medium {
+      width: 50%;
+      max-width: none;
+      margin-left: 35%;
+      margin-top: 0;
+    }
+    &::placeholder {
+      color: darken(col(secondary), 70%);
+      font-weight: 700;
+    }
+    &:focus {
+      width: 80%;
+      @include medium {
+        width: 60%;
+      }
+    }
+  }
+}
+
+.faq {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  height: 100%;
+  padding: 3rem;
+  background-color: col(secondary);
+  color: col(primary);
+  @include medium {
+    display: block;
+  }
+  @include large {
+    width: 25%;
+  }
+  &__logo {
+    padding-bottom: 3rem;
+    font-size: 2.6rem;
+  }
+  &__link {
+    color: col(cblack);
+    text-decoration: none;
+  }
+  &__list {
+    list-style-type: none;
+  }
+  &__item {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  &__linked {
+    color: col(cblack);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 1.6rem;
+    opacity: .6;
+  }
+  &__second {
+    font-size: 1.4rem;
+  }
+}
+
+.questions {
+  padding: 3rem;
+  @include medium {
+    margin-left: 20%;
+  }
+  @include large {
+    margin-left: 15%;
+  }
+  &__question {
+    max-width: 440px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    @include medium {
+      margin-bottom: 3rem;
+    }
+    @include large {
+      max-width: 520px;
+    }
+    &--hidden {
+      display: none;
+    }
+  }
+  &__header {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    @include small {
+      font-size: 2.5rem;
+    }
+    @include medium {
+      font-size: 2.8rem;
+    }
+  }
+  &__content {
+    color: darken(col(secondary), 60%);
+  }
+}

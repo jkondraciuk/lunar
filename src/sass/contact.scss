@@ -1,0 +1,257 @@
+@import "config.scss";
+@import "utilities.scss";
+@import "menu.scss";
+@import "animations.scss";
+
+.container {
+  @include medium {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+  &__left {
+    @include medium {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      height: 100%;
+    }
+  }
+  &__left-box {
+    @include medium {
+      position: relative;
+      height: 100%;
+    }
+  }
+  &__right {
+    @include medium {
+      overflow: hidden;
+      position: relative;
+      width: 50%;
+      height: 100%;
+      background-color: col(primary);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem;
+  @include medium {
+    padding-left: 3rem;
+    padding-top: 2.8rem;
+  }
+  &__logo {
+    font-size: 2.6rem;
+  }
+  &__link {
+    color: col(cblack);
+    text-decoration: none;
+  }
+}
+
+.info {
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 2rem;
+  text-align: center;
+  @include medium {
+    margin-top: 10%;
+    padding: 3rem;
+    text-align: left;
+  }
+  @include large {
+    margin-top: 15%;
+  }
+  &__box {
+    margin: 0 auto;
+    @include small {
+      max-width: 600px;
+    }
+  }
+  &__header {
+    width: 95%;
+    margin: 0 auto;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    animation: slide-right .4s backwards 1;
+    @include medium {
+      width: 100%;
+      margin: 0;
+      font-size: 3.8rem;
+    }
+    @include large {
+      font-size: 5.4rem;
+    }
+  }
+  &__subheader {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    animation: slide-right .4s .1s backwards 1;
+    @include medium {
+      margin: 0;
+      margin-top: 2rem;
+    }
+    @include large {
+      font-size: 2rem;
+    }
+  }
+  &__img-box {
+    margin-top: 2rem;
+  }
+  &__img {
+    width: 90%;
+    @include medium {
+      display: none;
+    }
+  }
+  &__extra{
+    display: flex;
+    justify-content: space-between;
+    @include medium {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 3rem;
+    }
+  }
+  &__contact {
+    margin-top: 1rem;
+  }
+  &__contact-item {
+    display: flex;
+    align-items: center;
+  }
+  &__contact-img {
+    width: 3.2rem;
+    margin-right: 1rem;
+  }
+  &__contact-text {
+    font-size: 1.7rem;
+  }
+  &__link-icons {
+    display: flex;
+    flex-direction: column;
+  }
+  &__link-icon {
+    width: 3.2rem;
+    margin-top: 1rem;
+  }
+}
+
+.contact {
+  margin: auto;
+  padding: 2rem;
+  padding-bottom: 1.2rem;
+  background-color: col(primary);
+  color: col(secondary);
+  @include medium {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  &__img {
+    display: none;
+    &--first {
+      top: -.8rem;
+      left: -2rem;
+      transform: rotate(180deg);
+    }
+    &--second {
+      bottom: -1.2rem;
+      right: -5rem;
+    }
+    @include large {
+      position: absolute;
+      display: block;
+      width: 18rem;
+    }
+  }
+  &__form {
+    max-width: 380px;
+    margin: 0 auto;
+    @include medium {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70%;
+      max-width: 360px;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    &--button {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &__label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: block;
+    opacity: .5;
+    transition: .1s;
+    &--textarea {
+      top: -2rem;
+      left: 1rem;
+      font-size: 1.2rem;
+    }
+    &--active {
+      top: -.7rem;
+      left: 1rem;
+      font-size: 1.2rem;
+    }
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.2rem 1rem;
+    border: none;
+    border-bottom: 2px solid col(secondary);
+    outline: none;
+    background-color: transparent;
+    color: darken(col(secondary), 10%);
+    font-size: 1.6rem;
+    transition: .2s;
+    &:focus {
+      width: 90%;
+    }
+    &:focus + label {
+      top: -.7rem;
+      left: 2.2rem;
+      font-size: 1.2rem;
+    }
+  }
+  &__textarea {
+    resize: none;
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-top: 3.2rem;
+    padding: 1rem;
+    border: 2px solid col(secondary);
+    outline: none;
+    background-color: transparent;
+    color: col(secondary);
+    transition: .2s;
+    &:focus {
+      border-radius: 10px;
+      width: 90%;
+    }
+    &:focus + label {
+      top: -2rem;
+      left: 2.2rem;
+      font-size: 1.2rem;
+    }
+  }
+}

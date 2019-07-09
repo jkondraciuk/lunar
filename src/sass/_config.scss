@@ -1,0 +1,74 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Space+Mono:400,700&subset=latin-ext');
+
+//Functionality
+
+$colors: (
+  cblack: #111,
+  cwhite: #fff,
+  primary: #000,
+  secondary: #fff,
+  outline: #f55,
+  error: #ff2244
+);
+
+@function col ($color) {
+  @return map-get($colors, $color);
+}
+
+$x-small-width: 480px;
+$small-width: 640px;
+$medium-width: 880px;
+$large-width: 1200px;
+$x-large-width: 1800px;
+
+@mixin x-small {
+  @media (min-width: #{$x-small-width}) {
+    @content;
+  }
+}
+@mixin small {
+  @media (min-width: #{$small-width}) {
+    @content;
+  }
+}
+@mixin medium {
+  @media (min-width: #{$medium-width}) {
+    @content;
+  }
+}
+@mixin large {
+  @media (min-width: #{$large-width}) {
+    @content;
+  }
+}
+@mixin x-large {
+  @media (min-width: #{$x-large-width}) {
+    @content;
+  }
+}
+
+/* Styling */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline-color: col(outline);
+}
+
+html {
+  font-size: 62.5%;
+  @include x-small {
+    font-size: 70%;
+  }
+  @include small {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+}

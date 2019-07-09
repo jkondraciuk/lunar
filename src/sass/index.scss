@@ -1,0 +1,207 @@
+@import "config.scss";
+@import "utilities.scss";
+@import 'menu.scss';
+@import 'animations.scss';
+
+body {
+  background: col(secondary);
+  @include small {
+    overflow: hidden !important;
+  }
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  @include small {
+    display: flex;
+  }
+  &__left-side {
+    min-width: 55%;
+    @include medium {
+      min-width: 60%;
+    }
+    @include large {
+      min-width: 66%;
+    }
+  }
+  &__right-side {
+    width: 100%;
+    animation: shrink .6s 1;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  @include medium {
+    padding-left: 3rem;
+    padding-top: 2.8rem;
+  }
+  &__logo {
+    font-size: 2.6rem;
+  }
+  &__link {
+    color: col(cblack);
+    text-decoration: none;
+  }
+  &__menu-icon {
+    position: static;
+    cursor: pointer;
+    @include small {
+      position: absolute;
+      z-index: 0;
+    }
+  }
+}
+
+.welcome {
+  position: relative;
+  padding: 2rem;
+  @include small {
+    position: static;
+  }
+  @include medium {
+    padding-left: 3rem;
+  }
+  &__header {
+    max-width: 38rem;
+    min-height: 10.5rem;
+    margin-top: 1rem;
+    font-size: 2.8rem;
+    animation: slide-down .6s 1;
+    @include x-small {
+      font-size: 3rem;
+    }
+    @include small {
+      margin-top: 4rem;
+      font-size: 3.6rem;
+    }
+    @include medium {
+      max-width: 45rem;
+      font-size: 4.8rem;
+    }
+    @include large {
+      max-width: 55rem;
+      margin-top: 8rem;
+      font-size: 6rem;
+    }
+  }
+  &__img {
+    width: 30rem;
+    transform: translate(-1rem, 12rem);
+    @include small {
+      position: absolute;
+      left: 2rem;
+      bottom: 2.5rem;
+    }
+    @include medium {
+      width: 50rem;
+      transform: translate(-1rem, 18rem);
+    }
+    @include large {
+      width: 70rem;
+      transform: translate(-2rem, 24rem);
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;
+  padding-top: 10rem;
+  background-color: col(primary);
+  color: col(cwhite);
+  @include small {
+    justify-content: space-evenly;
+    height: 100%;
+  }
+  &__intro {
+    display: flex;
+    justify-content: center;
+    max-width: 36rem;
+    margin: 0 auto;
+    @include small {
+      max-width: none;
+    }
+    @include medium {
+      max-width: none;
+      margin: 0;
+      flex-direction: column;
+    }
+  }
+  &__intro-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include medium {
+      flex-direction: row;
+      justify-content: center;
+      margin: 1rem;
+      &:nth-child(1) {
+        transform: translateX(-5rem);
+      }
+      &:nth-child(2) {
+        transform: translateX(4rem);
+      }
+      &:nth-child(3) {
+        transform: translateX(-3rem);
+      }
+    }
+  }
+  &__intro-icon {
+    width: 50%;
+    @include medium {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+  &__intro-description {
+    margin-top: .5rem;
+    font-size: 1.8rem;
+    @include medium {
+      margin-left: 1rem;
+      font-size: 2.4rem;
+    }
+  }
+  &__list {
+    list-style-type: none;
+    padding: 3rem 0;
+  }
+  &__list-item {
+    padding: .7rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: flip .1s 1, slide-right .2s 1 forwards;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1rem;
+      transform: translateY(.5rem);
+      background-image: url('../icons/check.svg');
+      background-size: contain;
+    }
+    &:nth-child(1) {animation-delay: 0}
+    &:nth-child(2) {animation-delay: .1s}
+    &:nth-child(3) {animation-delay: .2s}
+    &:nth-child(4) {animation-delay: .3s}
+    &:nth-child(5) {animation-delay: .4s}
+  }
+  &__button {
+    border: 1px solid transparent;
+    font-size: 1.6rem;
+    animation: rotate .2s .6s 1;
+    @include small {
+      width: 13rem;
+      height: 4.5rem;
+      font-size: 1.6rem;
+    }
+  }
+}

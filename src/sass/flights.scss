@@ -1,0 +1,137 @@
+@import "config.scss";
+@import "utilities.scss";
+@import "menu.scss";
+@import 'animations.scss';
+
+body {
+  background-color: col(primary);
+  color: col(secondary);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  @include medium {
+    padding-left: 3rem;
+    padding-top: 2.8rem;
+  }
+  &__logo {
+    font-size: 2.6rem;
+  }
+  &__link {
+    color: col(cwhite);
+    text-decoration: none;
+  }
+}
+
+.flights {
+  &__header {
+    padding: 2rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    animation: slide-right .4s 1;
+    @include small {
+      padding-top: 0;
+    }
+    @include medium {
+      font-size: 3.2rem;
+    }
+    @include large {
+      font-size: 3.6rem;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include small {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      max-width: 80rem;
+      margin: 0 auto;
+    }
+    @include medium {
+      max-width: 88rem;
+    }
+    @include large {
+      max-width: 100rem;
+    }
+    @include x-large {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150rem;
+      max-width: 150rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__flight {
+    position: relative;
+    display: block;
+    width: 80%;
+    height: 50vw;
+    max-width: 33rem;
+    max-height: 22rem;
+    margin-bottom: 2.5rem;
+    color: col(secondary);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: .2s;
+    animation: floating 5s infinite;
+    @include x-small {
+      font-size: 1.4rem;
+    }
+    @include small {
+      font-size: 1.6rem;
+      width: 30%;
+      height: 25vw;
+      max-width: 24rem;
+      max-height: 20rem;
+    }
+    @include medium {
+      max-width: 30rem;
+    }
+    @include large {
+      max-height: 20.5rem;
+    }
+    @include x-large {
+      max-width: 50rem;
+      max-height: 35rem;
+    }
+    &:hover {
+      transform: scale(1.02);
+      & > div {
+        opacity: 1;
+      }
+    }
+  }
+  &__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20%;
+    transform: translate(-50%, -50%);
+    &--loaded {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__description {
+    position: absolute;
+    left: -1px;
+    bottom: -1px;
+    width: 101%;
+    min-height: 35%;
+    padding: 1rem;
+    background-color: rgba(1,1,1,.8);
+    opacity: 0;
+    transition: .2s;
+  }
+}

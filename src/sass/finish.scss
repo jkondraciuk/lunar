@@ -1,0 +1,125 @@
+@import "config.scss";
+@import "utilities.scss";
+@import "animations.scss";
+
+body {
+  overflow: hidden;
+  background-color: col(primary);
+  color: col(secondary);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  @include medium {
+    padding-left: 3rem;
+    padding-top: 2.8rem;
+  }
+  &__logo {
+    font-size: 2.6rem;
+  }
+  &__link {
+    color: col(cwhite);
+    text-decoration: none;
+  }
+  &__menu-icon {
+    animation: rotate-in .4s 1;
+  }
+}
+
+.finish {
+  margin-top: 2rem;
+  padding: 3rem;
+  @include small {
+    padding-left: 5vw;
+  }
+  @include medium {
+    margin-top: 2.5rem;
+    padding-left: 6vw;
+  }
+  @include large {
+    margin-top: 4rem;
+    padding-left: 8vw;
+  }
+  &__header {
+    margin-bottom: 2rem;
+    font-size: 3.2rem;
+    letter-spacing: 1px;
+    line-height: 130%;
+    @include small {
+      font-size: 3.4rem;
+    }
+    @include medium {
+      font-size: 3.6rem;
+    }
+    @include large {
+      font-size: 5.3rem;
+    }
+    &--first {
+      display: inline-block;
+      animation: slide-right .3s 1;
+    }
+    &--second {
+      display: inline-block;
+      animation: slide-right .4s 1;
+    }
+  }
+  &__subheader {
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 150%;
+    opacity: .5;
+    animation: slide-right .6s;
+    @include small {
+      font-size: 1.8rem;
+    }
+    @include medium {
+      font-size: 1.7rem;
+    }
+    @include large {
+      font-size: 1.9rem;
+    }
+  }
+  &__img {
+    position: absolute;
+    bottom: -1rem;
+    left: 1rem;
+    width: 15rem;
+    @include small {
+      width: 20rem;
+    }
+    @include medium {
+      bottom: -2rem;
+      width: 25rem;
+    }
+    @include large {
+      bottom: -3rem;
+      width: 40rem;
+    }
+  }
+  &__button {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    animation: flip .4s 1;
+    @include small {
+      bottom: 3.5rem;
+      right: 3.5rem;
+      width: 8rem;
+      height: 3rem;
+      font-size: 1.4rem;
+    }
+    @include large {
+      bottom: 4rem;
+      right: 4rem;
+      width: 9rem;
+      height: 3.4rem;
+      font-size: 1.5rem;
+    }
+  }
+}
