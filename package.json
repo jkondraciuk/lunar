@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "npm-run-all build:*",
-    "build:sass": "sass src/sass:dist/css",
-    "watch:sass": "sass src/sass:dist/css --watch",
+    "build:sass": "sass src/sass:docs/css",
+    "watch:sass": "sass src/sass:docs/css --watch",
     "build:webpack": "webpack",
     "watch:webpack": "webpack --watch",
-    "build:images": "imagemin src/pictures --out-dir dist/pictures"
+    "build:images": "imagemin src/pictures --out-dir docs/pictures"
   },
   "author": "Jakub Kondraciuk",
   "license": "MIT",
