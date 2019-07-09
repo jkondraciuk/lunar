@@ -67,15 +67,17 @@ body {
     padding-left: 3rem;
   }
   &__header {
-    max-width: 38rem;
+    max-width: 34rem;
     min-height: 10.5rem;
     margin-top: 1rem;
     font-size: 2.8rem;
     animation: slide-down .6s 1;
     @include x-small {
+      max-width: 36rem;
       font-size: 3rem;
     }
     @include small {
+      max-width: 38rem;
       margin-top: 4rem;
       font-size: 3.6rem;
     }
