@@ -24,7 +24,7 @@ I made this project because I wanted to create a bigger website, nice in terms o
 ## Setup
 Setup of the project
 * Clone this repo
-* npm -i
+* ```npm -i```
 
 Working with the project
 * npm run build - builds everything
