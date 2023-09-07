@@ -1,5 +1,5 @@
 # Lunar
-> A responsive website about travelling into the space
+> A fully-responsive website about travelling into the space
 
 ## Table of contents
 * [General info](#general-info)
